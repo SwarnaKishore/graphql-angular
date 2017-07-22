@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<ul *ngIf="!loading; else loadingMsg">
+  <li *ngFor="let post of data.posts">{{ post.title }} - {{ post.url }}</li>
+</ul>
+<ng-template #loadingMsg>
+  Loading your posts...
+</ng-template>
